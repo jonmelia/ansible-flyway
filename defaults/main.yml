@@ -1,7 +1,8 @@
 ---
 flyway_version: "5.0.1"
-flyway_download_url: "https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/%s/flyway-commandline-%s.tar.gz"
-flyway_download_validate_certs: "yes"
+flyway_download_url: "http{{'s' if flyway_use_ssl else ''}}://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/%s/flyway-commandline-%s.tar.gz"
+flyway_use_ssl: true
+flyway_validate_ssl_cert: false
 flyway_root: /opt/flyway
 flyway_symlink_location: /usr/bin
 flyway_config:
@@ -14,3 +15,4 @@ flyway_config:
     password: postgres
   schemas: public
 flyway_table: schema_history
+
